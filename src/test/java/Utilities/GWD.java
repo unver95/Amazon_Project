@@ -28,9 +28,11 @@ public class GWD {
     public static void setThreadBrowserName(String browserName) {
         GWD.threadBrowserName.set(browserName);
     }
+
     public static String getThreadBrowserName() {
         return GWD.threadBrowserName.get();
     }
+
     // threadDriver.get() -> will return the driver in the current thread
     // threadDriver.set(driver) -> sets the driver to the current thread
     public static WebDriver getDriver() {
@@ -41,7 +43,7 @@ public class GWD {
         Logger.getLogger("").setLevel(Level.SEVERE);
 
         if (threadBrowserName.get() == null) // when we run our other tests directly, since parameters will not come from XML,
-            threadBrowserName.set("chrome"); // chrome is assigned as the default option.
+            threadBrowserName.set("firefox"); // chrome is assigned as the default option.
 
 
         if (threadDriver.get() == null) // If the driver has been initialized once, there will be no need to perform the operations below again; the function will simply return the driver.

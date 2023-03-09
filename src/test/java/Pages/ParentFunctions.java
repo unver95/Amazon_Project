@@ -15,6 +15,11 @@ public class ParentFunctions {
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
     Assertion assertion = new Assertion();
 
+    public void openBrowserAndGotoURL(String URL){
+        GWD.getDriver().manage().window().maximize();
+        GWD.getDriver().get(URL);
+    }
+
 
     public void scrollToElementParent(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
